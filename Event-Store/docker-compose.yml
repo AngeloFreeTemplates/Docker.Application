@@ -6,6 +6,14 @@ services:
     build: .
     restart: "always"
     environment:
+      # - EVENTSTORE_CLUSTER_SIZE=1
+      # - EVENTSTORE_RUN_PROJECTIONS=All
+      # - EVENTSTORE_START_STANDARD_PROJECTIONS=true
+      # - EVENTSTORE_EXT_TCP_PORT=1113
+      # - EVENTSTORE_HTTP_PORT=2113
+      # - EVENTSTORE_INSECURE=true
+      # - EVENTSTORE_ENABLE_EXTERNAL_TCP=true
+      # - EVENTSTORE_ENABLE_ATOM_PUB_OVER_HTTP=true
       - EVENTSTORE_CLUSTER_SIZE=1
       - EVENTSTORE_RUN_PROJECTIONS=All
       - EVENTSTORE_START_STANDARD_PROJECTIONS=true
@@ -15,15 +23,23 @@ services:
       - EVENTSTORE_ENABLE_EXTERNAL_TCP=true
       - EVENTSTORE_ENABLE_ATOM_PUB_OVER_HTTP=true
     ports:
-      - "2113:2113"
+      # - "2113:2113"
+      # - "1113:1113"
       - "1113:1113"
+      - "2113:2113"
     volumes:
+      # - type: volume
+      #   source: eventstore-volume-data
+      #   target: /var/lib/eventstore
+      # - type: volume
+      #   source: eventstore-volume-logs
+      #   target: /var/log/eventstore
       - type: volume
-        source: eventstore-volume-data
-        target: /var/lib/eventstore
+        source: eventstore-data
+        target: /var/lib/eventstore-data
       - type: volume
-        source: eventstore-volume-logs
-        target: /var/log/eventstore
+        source: eventstore-logs
+        target: /var/log/eventstore-logs
 
 volumes:
   eventstore-volume-data:
