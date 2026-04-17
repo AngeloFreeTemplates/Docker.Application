@@ -1,0 +1,1 @@
+FROM loicsharma/baget:latest

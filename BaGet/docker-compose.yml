@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  baget:
+    container_name: baget
+    build: .
+    restart: "always"
+    env_file:
+      - baget.env
+    ports:
+      - 5555:80
+    volumes:
+      - /storage/baget:/var/baget
+    networks:
+      - lan-network
+
+networks:
+   lan-network:
+      external:
+         name: docker-lan
