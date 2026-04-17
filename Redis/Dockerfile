@@ -1,4 +1,5 @@
-FROM redis:8.4.0
+FROM redis:8.6.2
+#FROM redis:8.4.0
 #FROM redis:7.4.5
 
 ENV DEBIAN_FRONTEND=noninteractive
