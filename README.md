@@ -4,6 +4,7 @@ There are currently the following templates:
 
 ## Application
 
+- Baget (Server Nuget)
 - ElasticSearch
 - Event Store
 - Grafana & Prometheus
@@ -35,6 +36,12 @@ The docker-lan network (bridge type) was created with the command:
 > docker network create --driver=bridge --subnet=192.168.100.0/24 docker-lan
 
 ## Application configuration
+
+For Baget, you can choose whether to use SQLite or SQLServer as your database.
+
+Based on your preferences, create a copy of the relevant .env file and rename it baget.env as indicated in docker-compose.yml, or adjust the latter's configuration.
+
+---
 
 After starting the KeyCloak docker for the first time, if you want to use it in HTTP mode and not in the standard HTTPS mode, you need to change the value of the SSL_REQUIRED column to NONE in the relevant database, REALM table, then restart the docker.
 
