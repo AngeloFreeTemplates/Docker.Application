@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  rust-server:
+   container_name: rust-server
+   build:
+     context: .
+     dockerfile: Dockerfile
+   restart: always
+   volumes:
+     - /storage/CHANGEME:/data
+   environment:
+     - RUSTFS_ACCESS_KEY=admin
+     - RUSTFS_SECRET_KEY=YourStr0ngPassw0rd
+     - RUSTFS_CONSOLE_ENABLE=true
+   networks:
+     - lan-network   
+   ports:
+     - 127.0.0.1:9000:9000
+     - 127.0.0.1:9001:9001
+
+networks:
+   lan-network:
+      external:
+         name: docker-lan

@@ -1,0 +1,1 @@
+FROM rustfs/rustfs
