@@ -23,6 +23,7 @@ There are currently the following templates:
 - Rabbit-MQ
 - Rabbit-MQ (2-node cluster mode)
 - Redis
+- RustFS (Rust File System)
 - Seq
 - Storage MinIO
 - Vault
