@@ -1,5 +1,5 @@
-FROM redis:8.6.3
-#FROM redis:8.6.2
+FROM redis:8.8.0
+#FROM redis:8.6.3
 
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update
