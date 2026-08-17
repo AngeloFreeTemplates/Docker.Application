@@ -1,4 +1,5 @@
-FROM datalust/seq:2025.2
+FROM datalust/seq:2026.1
+#FROM datalust/seq:2025.2
 #FROM datalust/seq:2024.3
 
 ENV DEBIAN_FRONTEND=noninteractive
